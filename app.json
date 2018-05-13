@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/controlRecorder/controlRecorder",
+    "pages/logger/logger",
     "pages/about/about",
     "pages/createDetailedRecorder/createDetailedRecorder",
     "pages/datasheet/datasheet",

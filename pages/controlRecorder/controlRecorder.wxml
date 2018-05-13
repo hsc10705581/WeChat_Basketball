@@ -34,6 +34,6 @@
       <image src='/images/icons/right-stop.png' class='control-clock-icons' wx:if="{{counting}}"></image>
       <image src='/images/icons/right-play.png' class='control-clock-icons' wx:if="{{!counting}}"></image>
     </button>
-    <button class='buttom-text' style='background: black;'><text style='color: white;'>{{bottomText}}</text></button>
+    <button class='buttom-text' style='background: black;' bindtap='showLogger'><text style='color: white;'>{{bottomText}}</text></button>
   </view>
 </view>

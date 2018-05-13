@@ -20,6 +20,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    logger: ["00:00   比赛就绪"], //logger记录bottomText
     bottomText: "00:00   比赛就绪",
     teamPause: [0, 0],
     teamFoul: [0, 0],
@@ -131,10 +132,13 @@ Page({
               teamScore[event.currentTarget.dataset.teamId] = teamScore[event.currentTarget.dataset.teamId] + parseInt(that.data.point[res.tapIndex][1])
               teamPlayersScore[event.currentTarget.dataset.teamId][event.currentTarget.dataset.playerId] = teamPlayersScore[event.currentTarget.dataset.teamId][event.currentTarget.dataset.playerId] + parseInt((that.data.point[res.tapIndex][1]))
               var bottomText = (that.data.currentTime[0] < 10 ? '0' + that.data.currentTime[0] : that.data.currentTime[0]) + ':' + (that.data.currentTime[1] < 10 ? '0' + that.data.currentTime[1] : that.data.currentTime[1]) + ' ' + that.data.teamName[event.currentTarget.dataset.teamId] + that.data.teamMembers[event.currentTarget.dataset.teamId][event.currentTarget.dataset.playerId] + that.data.point[res.tapIndex][1] + "分命中"
+              var logger = that.data.logger
+              logger.unshift(bottomText)
               that.setData({
                 teamScore: teamScore,
                 teamPlayersScore: teamPlayersScore,
                 bottomText: bottomText,
+                logger: logger,
               })
             }
           })
@@ -157,9 +161,12 @@ Page({
                 teamPlayersData[event.currentTarget.dataset.teamId][event.currentTarget.dataset.playerId][res.tapIndex] = teamPlayersData[event.currentTarget.dataset.teamId][event.currentTarget.dataset.playerId][res.tapIndex] + 1;
                 var bottomText = (that.data.currentTime[0] < 10 ? '0' + that.data.currentTime[0] : that.data.currentTime[0]) + ':' + (that.data.currentTime[1] < 10 ? '0' + that.data.currentTime[1] : that.data.currentTime[1]) + ' ' + that.data.teamName[event.currentTarget.dataset.teamId] + that.data.teamMembers[event.currentTarget.dataset.teamId][event.currentTarget.dataset.playerId] + that.data.typeList[res.tapIndex] + '+1'
                 var text = bottomText
+                var logger = that.data.logger
+                logger.unshift(bottomText)
                 that.setData({
                   teamPlayersData: teamPlayersData,
                   bottomText: text,
+                  logger: logger,
                 })
                 //判断是否记录犯规，是的话，球队犯规+1
                 if (that.data.typeList[res.tapIndex] == "犯规") {
@@ -199,15 +206,22 @@ Page({
           var teamPause = that.data.teamPause
           teamPause[res.tapIndex] = teamPause[res.tapIndex] + 1
           var bottomText = (that.data.currentTime[0] < 10 ? '0' + that.data.currentTime[0] : that.data.currentTime[0]) + ':' + (that.data.currentTime[1] < 10 ? '0' + that.data.currentTime[1] : that.data.currentTime[1]) + ' ' + that.data.teamName[res.tapIndex] + "暂停"
+          var logger = that.data.logger
+          logger.unshift(bottomText)
           that.setData({
             teamPause : teamPause,
             bottomText : bottomText,
+            logger: logger,
           })
         }
       })
-      
-      var bottomText = (that.data.currentTime[0] < 10 ? '0' + that.data.currentTime[0] : that.data.currentTime[0]) + ':' + (that.data.currentTime[1] < 10 ? '0' + that.data.currentTime[1] : that.data.currentTime[1]) + ' ' + "比赛暂停"
     }
+  },
+
+  showLogger:function (event) {
+    wx.navigateTo({
+      url: '/pages/logger/logger?extra=' + JSON.stringify(this.data.logger),
+    })
   },
 
   /**
