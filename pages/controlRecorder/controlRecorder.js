@@ -114,19 +114,31 @@ Page({
     })
   },
 
+  showDataSheet: function(event){
+    var passData = {
+      typeList: this.data.typeList,
+      teamName: this.data.teamName,
+      teamMembers: this.data.teamMembers,
+      teamPlayersScore: this.data.teamPlayersScore,
+      teamPlayersData: this.data.teamPlayersData
+    }
+    wx.navigateTo({
+      url: "/pages/datasheet/datasheet?extra=" + JSON.stringify(passData)
+    })
+  },
+
   //tap不同球员以后弹出对话框
   open: function(event){
     var that=this;
     wx.showActionSheet({
       itemList: ['得分', '其他统计'],
       success: function (res) {
-        var formalRes = res
-
-        if (res.tapIndex == 0){
+        var formalRes = res;
+        if (res.tapIndex == 0) {
           //弹出得分相关数据的对话框，需要将得分情况分别记录到球员对应数据，和球队数据（球队数据需要渲染到当前页面）
           wx.showActionSheet({
             itemList: that.data.point,
-            success: function (res){
+            success: function (res) {
               var teamScore = that.data.teamScore.slice()
               var teamPlayersScore = that.data.teamPlayersScore.slice()
               teamScore[event.currentTarget.dataset.teamId] = teamScore[event.currentTarget.dataset.teamId] + parseInt(that.data.point[res.tapIndex][1])
@@ -143,16 +155,15 @@ Page({
             }
           })
         }
-        if (res.tapIndex == 1){
-          if (that.data.typeList == false)
-          {
+        if (res.tapIndex == 1) {
+          if (that.data.typeList == false) {
             //如果没有设置其他数据，就会弹出一个说明对话框
             wx.showModal({
               content: '您没有设置统计其他数据！',
               showCancel: false,
             })
           }
-          else{
+          else {
             //弹出其他统计的对话框
             wx.showActionSheet({
               itemList: that.data.typeList,
@@ -173,7 +184,7 @@ Page({
                   var teamFoul = that.data.teamFoul.slice()
                   teamFoul[event.currentTarget.dataset.teamId] = teamFoul[event.currentTarget.dataset.teamId] + 1
                   that.setData({
-                    teamFoul : teamFoul
+                    teamFoul: teamFoul
                   })
                   //犯规的同时暂停
                   clearTimeout(timer);

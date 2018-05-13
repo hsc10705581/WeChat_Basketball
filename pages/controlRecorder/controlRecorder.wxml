@@ -8,7 +8,7 @@
   <view class='row'>
     <view class='second-row-cell'><text style='font-weight: bold; font-size: 35rpx;'>暂停:{{teamPause[0]}}</text></view>
     <view class='second-row-cell'><text style='font-weight: bold; font-size: 35rpx;'>犯规:{{teamFoul[0]}}</text></view>
-    <view class='second-row-cell'><button class='button-for-score' style='background: green'><text style='font-size: 40rpx;'>{{teamScore[0]}}:{{teamScore[1]}}</text></button></view>
+    <view class='second-row-cell'><button class='button-for-score' style='background: green' bindtap='showDataSheet'><text style='font-size: 40rpx;'>{{teamScore[0]}}:{{teamScore[1]}}</text></button></view>
     <view class='second-row-cell'><text style='font-weight: bold; font-size: 35rpx;'>暂停:{{teamPause[1]}}</text></view>
     <view class='second-row-cell'><text style='font-weight: bold; font-size: 35rpx;'>犯规:{{teamFoul[1]}}</text></view>
   </view>

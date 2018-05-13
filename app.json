@@ -1,10 +1,10 @@
 {
   "pages":[
-    "pages/controlRecorder/controlRecorder",
-    "pages/logger/logger",
     "pages/about/about",
-    "pages/createDetailedRecorder/createDetailedRecorder",
+    "pages/controlRecorder/controlRecorder",
     "pages/datasheet/datasheet",
+    "pages/logger/logger",
+    "pages/createDetailedRecorder/createDetailedRecorder",
     "pages/createSimpleRecorder/createSimpleRecorder",
     "pages/simpleScore/simpleScore"
   ],

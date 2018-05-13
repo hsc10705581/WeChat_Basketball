@@ -1,5 +1,5 @@
 <view class="container">
   <view class="column" wx:for="{{logger}}" wx:key=''>
-    <text style='font-weight: bold; font-size:64rpx;'>{{item}}</text>
+    <text style='font-weight: bold; font-size:32rpx;'>{{item}}</text>
   </view>
 </view>

@@ -1,50 +1,37 @@
-<scroll-view scroll-x="true" scroll-y="true" class="container">
-  <view class="table-row bg-head">
-    <view class="table-head">name</view>    
-    <view class="vertical-line">{{}}</view>
-    <view class="table-head">score</view>
-    <view class="vertical-line">{{}}</view>
-    <view class="table-head">rebound</view>
+<view class='container'>
+  <view class='name-column'>
+    <view wx:for='{{teamName}}' wx:for-item="teamName" wx:for-index="team" wx:key=''>
+      <view class='name-head-cell'>{{teamName}}队员</view>
+      <view class='first-part-row' wx:for='{{teamMembers[team]}}' wx:for-item="teamMemberName" wx:for-index="member" wx:key=''>
+        <view class='name-cell'>{{teamMemberName}}</view>
+      </view>
+    </view>
   </view>
-  <view class="horizontal-line">{{}}</view>
-  <block wx:for="{{firstTeamData}}" wx:key="{{code}}">
-    <view class="horizontal-line">{{}}</view>
-    <view class="table-row bg-deep" wx:if="{{index % 2 == 0}}">
-      <view class="table-cell">{{item.name}}</view>
-      <view class="vertical-line">{{}}</view>
-      <view class="table-cell">{{item.score}}</view>
-      <view class="vertical-line">{{}}</view>
-      <view class="table-cell">{{item.rebound}}</view>
-    </view>
-    <view class="table-row" wx:else>
-      <view class="table-cell">{{item.name}}</view>
-      <view class="vertical-line">{{}}</view>
-      <view class="table-cell">{{item.score}}</view>
-      <view class="vertical-line">{{}}</view>
-      <view class="table-cell">{{item.rebound}}</view>
-    </view>
-  </block>
+  
+  <scroll-view class='scroll' scroll-x='true' scroll-y='true'>
+    <view class='team-sheet' wx:for='{{teamName}}' wx:for-item="teamName" wx:for-index="team" wx:key=''>
+      <view class='score-column'>
+        <view class='first-part-row'>
+          <view class='head-cell'>得分</view>
+        </view>
+        <view class='first-part-row' wx:for='{{teamMembers[team]}}' wx:for-item="teamMemberName" wx:for-index="member" wx:key=''>
+          <view class='cell'>{{teamPlayersScore[team][member]}}</view>
+        </view>
+      </view>
 
-  <view class="table-row bg-head">
-    <view class="table-head">name</view>
-    <view class="table-head">score</view>
-    <view class="table-head">rebound</view>
-  </view>
-  <block wx:for="{{firstTeamData}}" wx:key="{{code}}">
-    <view class="horizontal-line">{{}}</view>
-    <view class="table-row bg-deep" wx:if="{{index % 2 == 0}}">
-      <view class="table-cell">{{item.name}}</view>
-      <view class="vertical-line">{{}}</view>
-      <view class="table-cell">{{item.score}}</view>
-      <view class="vertical-line">{{}}</view>
-      <view class="table-cell">{{item.rebound}}</view>
+      <view class='rest-column'>
+        <view class='rest-part-row'>
+          <view wx:for='{{typeList}}' wx:for-item="type" wx:for-index='typeId' wx:key=''>
+            <view class='head-cell'>{{type}}</view>
+          </view>
+        </view>
+        <view class='rest-part-row' wx:for='{{teamMembers[team]}}' wx:for-item="teamMemberName" wx:for-index="member" wx:key=''>
+          <view wx:for='{{typeList}}' wx:for-item="type" wx:for-index='typeId' wx:key=''>
+            <view class='cell'>{{teamPlayersData[team][member][typeId]}}</view>
+          </view>
+        </view>
+      </view>
     </view>
-    <view class="table-row" wx:else>
-      <view class="table-cell">{{item.name}}</view>
-      <view class="vertical-line">{{}}</view>
-      <view class="table-cell">{{item.score}}</view>
-      <view class="vertical-line">{{}}</view>
-      <view class="table-cell">{{item.rebound}}</view>
-    </view>
-  </block>
-</scroll-view>
+  </scroll-view>
+
+</view>

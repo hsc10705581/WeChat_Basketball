@@ -1,47 +1,87 @@
-.container {
-  border: 10px solid darkgray;
-}
-.table-row {
+.container{
   display: flex;
+  flex-direction: row;
+}
+
+.scroll{
+  display: flex;
+  flex-direction: column;
+  width: 550rpx;
+}
+
+.name-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.team-sheet{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.score-column{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.first-part-row{
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  width: 1125rpx;
-  height: 100rpx;
 }
-.table-cell {
-    justify-content: center;
-    text-align: center;
 
-    width: 375rpx;
-}
-.bg-head{
-  background: snow;
-}
-.bg-deep{
-  background: #E6F3F9;
-}
-.table-head {
-  justify-content: center;
-  background: #3366FF;
-  color: #fff;
+.rest-column{
   display: flex;
+  flex-direction: column;
+
+}
+
+.rest-part-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 
-  width: 375rpx;
-  height: 100rpx;
 }
 
-.vertical-line{
-  height: 100rpx;
-  width: 5rpx;
-  background: gray;
-  opacity: 0.2;
+.head-cell{
+  border: 0.5px solid black;
+  width: 100rpx;
+  height: 50rpx;
+
+  justify-content: center;
+  align-items: center;
+  background: greenyellow;
 }
 
-.horizontal-line{
-  height: 5rpx;
-  width: 1125rpx;
-  background: gray;
-  opacity: 0.2;
+.name-head-cell{
+  border: 0.5px solid black;
+  width: 200rpx;
+  height: 50rpx;
+
+  justify-content: center;
+  align-items: center;
+  background: greenyellow;
+}
+
+.cell{
+  border: 0.5px solid black;
+  width: 100rpx;
+  height: 50rpx;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.name-cell{
+  border: 0.5px solid black;
+  width: 200rpx;
+  height: 50rpx;
+
+  justify-content: center;
+  align-items: center;
 }
