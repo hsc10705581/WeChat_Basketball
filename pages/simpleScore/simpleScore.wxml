@@ -1,0 +1,32 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">简易记分表</view>
+        <view class="page__desc"></view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">{{firstTeamName}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{secondTeamName}}</view></view>
+        </view>
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="score"><text style="font-weight:bold; font-size:120rpx;">{{firstTeamScore}}</text></view></view>
+            <view class="weui-flex__item"><view class="score"><text style="font-weight:bold; font-size:120rpx;">{{secondTeamScore}}</text></view></view>
+        </view>
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="button-for-score parallel">
+              <button wx:if="{{foulShot}}" bindtap='score' data-score="{{1}}" data-team="{{0}}">1</button>
+              <button bindtap='score' data-score="{{2}}" data-team="{{0}}">2</button>
+              <button wx:if="{{threePoints}}" bindtap='score' data-score="{{3}}" data-team="{{0}}">3</button>
+            </view></view>
+            <view class="weui-flex__item"><view class="button-for-score parallel">
+              <button wx:if="{{foulShot}}" bindtap='score' data-score="{{1}}" data-team="{{1}}">1</button>
+              <button bindtap='score' data-score="{{2}}" data-team="{{1}}">2</button>
+              <button wx:if="{{threePoints}}" bindtap='score' data-score="{{3}}" data-team="{{1}}">3</button>
+            </view></view>
+        </view>
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="button-for-score"><button bindtap='score' data-score="{{-1}}" data-team="{{0}}">-1(用于调整)</button></view></view>
+            <view class="weui-flex__item"><view class="button-for-score"><button bindtap='score' data-score="{{-1}}" data-team="{{1}}">-1(用于调整)</button></view></view>
+        </view>
+    </view>
+</view>

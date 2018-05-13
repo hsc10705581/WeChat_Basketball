@@ -1,0 +1,39 @@
+<view class='container'>
+
+  <view class='row'>
+    <view class='team-name' style='background: yellow;'><text style='font-weight: bold; font-size: 50rpx;'>{{teamName[0]}}</text></view>
+    <view class='team-name' style='background: pink;'><text style='font-weight: bold; font-size: 50rpx;'>{{teamName[1]}}</text></view>
+  </view>
+
+  <view class='row'>
+    <view class='second-row-cell'><text style='font-weight: bold; font-size: 35rpx;'>暂停:{{teamPause[0]}}</text></view>
+    <view class='second-row-cell'><text style='font-weight: bold; font-size: 35rpx;'>犯规:{{teamFoul[0]}}</text></view>
+    <view class='second-row-cell'><button class='button-for-score' style='background: green'><text style='font-size: 40rpx;'>{{teamScore[0]}}:{{teamScore[1]}}</text></button></view>
+    <view class='second-row-cell'><text style='font-weight: bold; font-size: 35rpx;'>暂停:{{teamPause[1]}}</text></view>
+    <view class='second-row-cell'><text style='font-weight: bold; font-size: 35rpx;'>犯规:{{teamFoul[1]}}</text></view>
+  </view>
+
+  <view class='row'>
+    <view class='column-for-players'>
+      <view wx:for="{{teamMembers[0]}}" wx:key=''><button class='players-button' bindtap="open" data-player-id='{{index}}' data-team-id="{{0}}"><text style='font-size: 30rpx;'>{{item}}</text></button></view>
+    </view>
+
+    <view class='divide-line'></view>
+
+    <view class='column-for-players'>
+      <view wx:for="{{teamMembers[1]}}" wx:key=''><button class='players-button' bindtap="open" data-player-id='{{index}}' data-team-id='{{1}}'><text style='font-size: 30rpx;'>{{item}}</text></button></view>
+    </view>
+
+  </view>
+
+  <view class='buttom'>
+    <button class='clock' style='background: black;' bindtap='count'>
+      <image src='/images/icons/stop.png' class='control-clock-icons' wx:if="{{!counting}}"></image>
+      <image src='/images/icons/play.png' class='control-clock-icons' wx:if="{{counting}}"></image>
+      <text style='color:white;'>{{currentTime[0] < 10 ? '0' + currentTime[0] : currentTime[0]}}:{{currentTime[1]  < 10 ? '0' + currentTime[1] : currentTime[1]}}</text>
+      <image src='/images/icons/right-stop.png' class='control-clock-icons' wx:if="{{counting}}"></image>
+      <image src='/images/icons/right-play.png' class='control-clock-icons' wx:if="{{!counting}}"></image>
+    </button>
+    <button class='buttom-text' style='background: black;'><text style='color: white;'>{{bottomText}}</text></button>
+  </view>
+</view>

@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/controlRecorder/controlRecorder",
+    "pages/about/about",
+    "pages/createDetailedRecorder/createDetailedRecorder",
+    "pages/datasheet/datasheet",
+    "pages/createSimpleRecorder/createSimpleRecorder",
+    "pages/simpleScore/simpleScore"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "text": "关于",
+        "pagePath": "pages/about/about",
+        "iconPath": "images/icons/about.png",
+        "selectedIconPath": "images/icons/about-selected.png"
+      },
+      {
+        "text": "简易记分器",
+        "pagePath": "pages/createSimpleRecorder/createSimpleRecorder",
+        "iconPath": "images/icons/basketball.png",
+        "selectedIconPath": "images/icons/basketball-selected.png"
+      },
+      {
+        "text": "详细记分板",
+        "pagePath": "pages/createDetailedRecorder/createDetailedRecorder",
+        "iconPath": "images/icons/recorder.png",
+        "selectedIconPath": "images/icons/recorder-selected.png"
+      }
+    ],
+    "color": "#000",
+    "selectedColor": "#00f"
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

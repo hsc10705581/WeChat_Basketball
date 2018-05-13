@@ -1,0 +1,93 @@
+.container{
+  height: 100vh;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+  height: 100rpx;
+}
+
+.second-row-cell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20%;
+  height: 100rpx;
+}
+
+.button-for-score{
+  width: 150rpx;
+  height: 100rpx;
+}
+
+.column-for-players{
+  height: 850rpx;
+  width: 49.5%;
+  background: yellowgreen;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.divide-line{
+  width: 1%;
+  background: gray;
+}
+
+.players-button{
+  height: 100rpx;
+  width: 180rpx;
+  margin: 2.5rpx;
+  margin-top: 5rpx;
+}
+
+.buttom{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  
+  margin: 2rpx;
+  background-color: black;
+  height: 12.5%;
+}
+
+.clock{
+  display: flex;
+  align-items: center;
+
+  height: 150rpx;
+}
+
+.control-clock-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.buttom-text{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 80%;
+  height: 150rpx;
+}

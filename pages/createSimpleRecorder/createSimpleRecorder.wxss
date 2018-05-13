@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  height: 100vh;
+
+  flex-direction: column;
+}
+
+.textbox{
+  margin-bottom: 25rpx;
+  margin-top: 25rpx;
+}

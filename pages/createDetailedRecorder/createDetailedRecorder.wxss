@@ -1,0 +1,35 @@
+.container{
+  display: flex;
+  height: 100vh;
+
+  flex-direction: column;
+}
+
+.textbox{
+  margin-bottom: 25rpx;
+  margin-top: 25rpx;
+}
+
+page,
+.page{
+  height: 93.5%;
+}
+.page__bd{
+    height: 100%;
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}
+
+.weui-navbar{
+  background: #F8F8F8
+}
+
+.under-button{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}

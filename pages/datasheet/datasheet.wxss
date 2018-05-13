@@ -1,0 +1,47 @@
+.container {
+  border: 10px solid darkgray;
+}
+.table-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1125rpx;
+  height: 100rpx;
+}
+.table-cell {
+    justify-content: center;
+    text-align: center;
+
+    width: 375rpx;
+}
+.bg-head{
+  background: snow;
+}
+.bg-deep{
+  background: #E6F3F9;
+}
+.table-head {
+  justify-content: center;
+  background: #3366FF;
+  color: #fff;
+  display: flex;
+  align-items: center;
+
+  width: 375rpx;
+  height: 100rpx;
+}
+
+.vertical-line{
+  height: 100rpx;
+  width: 5rpx;
+  background: gray;
+  opacity: 0.2;
+}
+
+.horizontal-line{
+  height: 5rpx;
+  width: 1125rpx;
+  background: gray;
+  opacity: 0.2;
+}

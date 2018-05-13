@@ -1,0 +1,50 @@
+<scroll-view scroll-x="true" scroll-y="true" class="container">
+  <view class="table-row bg-head">
+    <view class="table-head">name</view>    
+    <view class="vertical-line">{{}}</view>
+    <view class="table-head">score</view>
+    <view class="vertical-line">{{}}</view>
+    <view class="table-head">rebound</view>
+  </view>
+  <view class="horizontal-line">{{}}</view>
+  <block wx:for="{{firstTeamData}}" wx:key="{{code}}">
+    <view class="horizontal-line">{{}}</view>
+    <view class="table-row bg-deep" wx:if="{{index % 2 == 0}}">
+      <view class="table-cell">{{item.name}}</view>
+      <view class="vertical-line">{{}}</view>
+      <view class="table-cell">{{item.score}}</view>
+      <view class="vertical-line">{{}}</view>
+      <view class="table-cell">{{item.rebound}}</view>
+    </view>
+    <view class="table-row" wx:else>
+      <view class="table-cell">{{item.name}}</view>
+      <view class="vertical-line">{{}}</view>
+      <view class="table-cell">{{item.score}}</view>
+      <view class="vertical-line">{{}}</view>
+      <view class="table-cell">{{item.rebound}}</view>
+    </view>
+  </block>
+
+  <view class="table-row bg-head">
+    <view class="table-head">name</view>
+    <view class="table-head">score</view>
+    <view class="table-head">rebound</view>
+  </view>
+  <block wx:for="{{firstTeamData}}" wx:key="{{code}}">
+    <view class="horizontal-line">{{}}</view>
+    <view class="table-row bg-deep" wx:if="{{index % 2 == 0}}">
+      <view class="table-cell">{{item.name}}</view>
+      <view class="vertical-line">{{}}</view>
+      <view class="table-cell">{{item.score}}</view>
+      <view class="vertical-line">{{}}</view>
+      <view class="table-cell">{{item.rebound}}</view>
+    </view>
+    <view class="table-row" wx:else>
+      <view class="table-cell">{{item.name}}</view>
+      <view class="vertical-line">{{}}</view>
+      <view class="table-cell">{{item.score}}</view>
+      <view class="vertical-line">{{}}</view>
+      <view class="table-cell">{{item.rebound}}</view>
+    </view>
+  </block>
+</scroll-view>
