@@ -1,32 +1,52 @@
-<view class="page">
-    <view class="page__hd">
-        <view class="page__title">简易记分表</view>
-        <view class="page__desc"></view>
+<view class='container'>
+  <view class='title'>
+    <view>
+      <text style='font-weight: bold; font-size: 64rpx'>简易记分器</text>
     </view>
-    <view class="page__bd page__bd_spacing">
-        <view class="weui-flex">
-            <view class="weui-flex__item"><view class="placeholder">{{firstTeamName}}</view></view>
-            <view class="weui-flex__item"><view class="placeholder">{{secondTeamName}}</view></view>
-        </view>
-        <view class="weui-flex">
-            <view class="weui-flex__item"><view class="score"><text style="font-weight:bold; font-size:120rpx;">{{firstTeamScore}}</text></view></view>
-            <view class="weui-flex__item"><view class="score"><text style="font-weight:bold; font-size:120rpx;">{{secondTeamScore}}</text></view></view>
-        </view>
-        <view class="weui-flex">
-            <view class="weui-flex__item"><view class="button-for-score parallel">
-              <button wx:if="{{foulShot}}" bindtap='score' data-score="{{1}}" data-team="{{0}}">1</button>
-              <button bindtap='score' data-score="{{2}}" data-team="{{0}}">2</button>
-              <button wx:if="{{threePoints}}" bindtap='score' data-score="{{3}}" data-team="{{0}}">3</button>
-            </view></view>
-            <view class="weui-flex__item"><view class="button-for-score parallel">
-              <button wx:if="{{foulShot}}" bindtap='score' data-score="{{1}}" data-team="{{1}}">1</button>
-              <button bindtap='score' data-score="{{2}}" data-team="{{1}}">2</button>
-              <button wx:if="{{threePoints}}" bindtap='score' data-score="{{3}}" data-team="{{1}}">3</button>
-            </view></view>
-        </view>
-        <view class="weui-flex">
-            <view class="weui-flex__item"><view class="button-for-score"><button bindtap='score' data-score="{{-1}}" data-team="{{0}}">-1(用于调整)</button></view></view>
-            <view class="weui-flex__item"><view class="button-for-score"><button bindtap='score' data-score="{{-1}}" data-team="{{1}}">-1(用于调整)</button></view></view>
-        </view>
+  </view>
+  <view class='name-row'>
+    <view class='team-name' wx:for='{{teamName}}' wx:key=''>
+      <text style='font-size: 50rpx;'>{{item}}</text>
     </view>
+  </view>
+  <view class='score-row'>
+    <view class='score-text' wx:for='{{teamScore}}' wx:key=''>
+      <text style='font-weight: bold; font-size: 200rpx; color: white;'>{{item}}</text>
+    </view>
+  </view>
+  <view class='add-score'>
+    <view class='one-team-button' wx:for='{{teamName}}' wx:key=''>
+      <view wx:if='{{foulShot}}'>
+        <button class='' data-team='{{index}}' data-score='{{1}}' bindtap='score'>+1</button>
+      </view>
+      <view>
+        <button class='' data-team='{{index}}' data-score='{{2}}' bindtap='score'>+2</button>
+      </view>
+      <view wx:if='{{threePoints}}'>
+        <button class='' data-team='{{index}}' data-score='{{3}}' bindtap='score'>+3</button>
+      </view>
+    </view>
+  </view>
+  <view class='adapt'>
+    <view class='adapt-button' wx:for='{{teamName}}' wx:key=''>
+      <view>
+        <button data-team='{{index}}' data-score='{{-1}}' bindtap='score'>-1(用于调整)</button>
+      </view>
+    </view>
+  </view>
+  <view class='clock'>
+    <button class='clock' style='background-color: black' bindtap='count'>
+      <image src='/images/icons/stop.png' class='control-clock-icons' wx:if="{{!counting}}"></image>
+      <image src='/images/icons/play.png' class='control-clock-icons' wx:if="{{counting}}"></image>
+      <text style='color: white'>{{currentTime[0] < 10 ? '0' + currentTime[0] : currentTime[0]}}:{{currentTime[1]  < 10 ? '0' + currentTime[1] : currentTime[1]}}</text>
+      <image src='/images/icons/right-stop.png' class='control-clock-icons' wx:if="{{counting}}"></image>
+      <image src='/images/icons/right-play.png' class='control-clock-icons' wx:if="{{!counting}}"></image>
+    </button>
+  </view>
+  <scroll-view class='logger' style='height: {{restHeight}}px' scroll-x='true' scroll-y='true'>
+    <view wx:for='{{logger}}' wx:key=''>
+      <text style='font-size: 50rpx;'>{{item}}</text>
+    </view>
+  </scroll-view>
+
 </view>

@@ -1,35 +1,100 @@
-.placeholder{
-  margin: 5px;
-  padding: 0 10px;
-  text-align: center;
-  background-color: #EBEBEB;
-  height: 2.3em;
-  line-height: 2.3em;
-  color: #cfcfcf; 
+.container{
+  display: flex;
+  flex-direction: column;
 }
 
-.score{
-  margin: 5px;
-  padding: 0 10px;
-  text-align: center;
-  background-color: #F8F8F8;
-  height: 120rpx;
-  line-height: 120rpx;
-  color: #cfcfcf; 
+.title{
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: center;
+
+  height: 100rpx;
+
+  background-color: white;
 }
 
-.button-for-score{
-  margin: 0px;
-  padding: 0 10px;
-  text-align: center;
-  background-color: #F8F8F8;
-  height: 105rpx;
-  line-height: 105rpx;
-  color: #cfcfcf; 
-}
-
-.parallel{
+.name-row{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.team-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+
+  width: 50%;
+  height: 80rpx;
+
+  background-color: yellowgreen;
+}
+
+.score-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.score-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  margin: 20rpx;
+
+  width: 50%;
+  height: 300rpx;
+
+  background-color: pink;
+}
+
+.add-score{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one-team-button, .adapt-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+
+  width: 50%;
+}
+
+.adapt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock{
+  display: flex;
+  align-items: center;
+
+  height: 150rpx;
+}
+
+.control-clock-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.logger{
+  display: flex;
+  flex-direction: column;
+
+  height: 150rpx;
 }

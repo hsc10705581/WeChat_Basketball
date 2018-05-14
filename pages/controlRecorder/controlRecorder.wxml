@@ -26,7 +26,7 @@
 
   </view>
 
-  <view class='buttom'>
+  <view class='buttom' style='height:{{rest_height}}px'>
     <button class='clock' style='background: black;' bindtap='count'>
       <image src='/images/icons/stop.png' class='control-clock-icons' wx:if="{{!counting}}"></image>
       <image src='/images/icons/play.png' class='control-clock-icons' wx:if="{{counting}}"></image>

@@ -46,8 +46,7 @@ Page({
 
   begin: function(event) {
     var passData = {
-      firstTeamName: this.data.firstTeamName,
-      secondTeamName: this.data.secondTeamName,
+      teamName: [this.data.firstTeamName, this.data.secondTeamName],
       foulShot: this.data.foulShot,
       threePoints: this.data.threePoints,
     }

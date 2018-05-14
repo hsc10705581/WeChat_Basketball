@@ -75,6 +75,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     var passData = JSON.parse(options.extra)
     var point = [] //记录所有得分可能
     /*
@@ -111,6 +112,21 @@ Page({
       teamMembers: [passData.firstTeamMembers, passData.secondTeamMembers],
       typeList: passData.typeList,
       point: point,
+    })
+
+    // 获取系统信息
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res);
+        // 可使用窗口宽度、高度
+        console.log('height=' + res.windowHeight);
+        console.log('width=' + res.windowWidth);
+        // 计算主体部分高度,单位为px
+        that.setData({
+          // second部分高度 = 利用窗口可使用高度 - first部分高度（这里的高度单位为px，所有利用比例将300rpx转换为px）
+          rest_height: res.windowHeight - res.windowWidth / 750 * 1000
+        })
+      }
     })
   },
 

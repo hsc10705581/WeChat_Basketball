@@ -1,12 +1,12 @@
 {
   "pages":[
     "pages/about/about",
+    "pages/simpleScore/simpleScore",
     "pages/controlRecorder/controlRecorder",
     "pages/datasheet/datasheet",
     "pages/logger/logger",
     "pages/createDetailedRecorder/createDetailedRecorder",
-    "pages/createSimpleRecorder/createSimpleRecorder",
-    "pages/simpleScore/simpleScore"
+    "pages/createSimpleRecorder/createSimpleRecorder"
   ],
   "tabBar": {
     "list": [

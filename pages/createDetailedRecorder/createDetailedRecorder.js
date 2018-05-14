@@ -188,7 +188,7 @@ Page({
     }
     else
     {
-      wx.navigateTo({
+      wx.redirectTo({
         url: "/pages/controlRecorder/controlRecorder?extra=" + JSON.stringify(passData)
       })
     }
